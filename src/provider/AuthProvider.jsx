@@ -6,16 +6,16 @@ import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWith
 const auth = getAuth(app);
 export const AuthContext = createContext(null);
 
-const AuthProvider = ({children}) => {
+const AuthProvider = ({ children }) => {
 
     const [user, setUser] = useState([])
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
 
 
     //create user with email and password;
     const createUser = (email, password) => {
+        setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password);
-        setLoading(false)
     }
 
     //get current user;
@@ -25,21 +25,21 @@ const AuthProvider = ({children}) => {
             setUser(currentUser)
             console.log('current user', currentUser)
             setLoading(false)
+
         })
         return () => {
             return unSubscribe();
         }
     }, [])
-    
+
     //login user with email and password;
 
     const logIn = (email, password) => {
+        setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
-        setLoading(false)
     }
 
-
-
+    
     const authInfo = {
         user,
         loading,

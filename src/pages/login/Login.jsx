@@ -3,7 +3,6 @@ import SectionTitle from "../../components/SectionTitle/SectionTitle";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form"
-import Swal from 'sweetalert2'
 import { AuthContext } from "../../provider/AuthProvider";
 
 
@@ -12,6 +11,7 @@ const Login = () => {
     const { user, logIn } = useContext(AuthContext);
     const [showpassword, setShowpassword] = useState(false);
     const [emailerror, setEmailerror] = useState(null)
+    const [passworderr, setPassworderr] = useState(null)
     const navigate = useNavigate();
 
     const { register, handleSubmit, reset } = useForm()
@@ -24,11 +24,12 @@ const Login = () => {
 
         //reset email error;
         setEmailerror(' ');
+        setPassworderr(' ');
 
         //existing email & password validation;
 
         if (user.email !== email) {
-            setEmailerror('Email & password do not match ! ');
+            setEmailerror('Email do not match ! ');
             return;
         }
 
@@ -38,17 +39,15 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 if (user) {
-                    Swal.fire({
-                        position: "center",
-                        icon: "success",
-                        title: "Login is successfull",
-                        showConfirmButton: false,
-                        timer: 1500
-                    });
                     navigate('/dashboard')
                 }
 
-        }).catch(error=>console.log(error))
+            }).catch(error => {
+                if (error?.code === 'auth/invalid-credential') {
+                    setPassworderr('Password do not match !');
+                    return;
+                }
+            })
        
     }
 
@@ -72,6 +71,7 @@ const Login = () => {
                             <input {...register("password")}
                                 type={showpassword ? "text" : "password"}
                                 className="textarea textarea-bordered bg-white" required />
+                            {passworderr && <span className="text-red-500">{passworderr}</span>}
                             <span onClick={() => setShowpassword(!showpassword)} className="absolute top-[50px] right-3">
                                 { showpassword ? <FaEyeSlash /> : <FaEye /> }
                             </span>
