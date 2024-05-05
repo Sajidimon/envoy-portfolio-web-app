@@ -10,7 +10,7 @@ const ThemeOption = () => {
                         <label className="label">
                             <span className="label-text text-black font-bold">Upload Your Logo</span>
                         </label>
-                        <input type="file" className="input pt-2 input-bordered bg-white" />
+                        <input type="file" className="file-input file-input-bordered file-input-accent bg-white" />
                     </div>
                     <div className="form-control">
                         <label className="label">
