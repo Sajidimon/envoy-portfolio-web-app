@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
-import { FaWordpress, FaNodeJs } from "react-icons/fa";
+import { FaWordpress, FaNodeJs, FaHome } from "react-icons/fa";
+import { TbSeo } from "react-icons/tb";
+import { IoMdOptions } from "react-icons/io";
 
 const Dashboard = () => {
     return (
@@ -10,18 +12,25 @@ const Dashboard = () => {
                     <div className="drawer h-full drawer-open">
                         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                         <div className="drawer-content flex flex-col items-center justify-center">
-                            {/* Page content here */}
-
                         </div>
                         <div className="drawer-side">
                             <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
-                            <ul className="menu p-4 min-h-screen bg-base-200 text-white">
+                            <ul className="menu p-4 min-h-screen bg-[#2C3338] text-white">
                                 {/* Sidebar content here */}
                                 <li>
-                                    <Link to='/dashboard/express-project'><FaNodeJs/><button>Add Node Project</button></Link>
+                                    <Link to='/'><FaHome/><button>Back to home</button></Link>
                                 </li>
                                 <li>
-                                    <Link to='/dashboard/wp-project'><FaWordpress /><button>Add WP Project</button></Link>
+                                    <Link to='/dashboard'><FaNodeJs/><button>Add node project</button></Link>
+                                </li>
+                                <li>
+                                    <Link to='/dashboard/wp-project'><FaWordpress /><button>Add wp project</button></Link>
+                                </li>
+                                <li>
+                                    <Link to='/dashboard/seo-project'><TbSeo /><button>Add seo project</button></Link>
+                                </li>
+                                <li>
+                                    <Link to='/dashboard/theme-option'><IoMdOptions /><button>Theme option</button></Link>
                                 </li>
                             </ul>
 

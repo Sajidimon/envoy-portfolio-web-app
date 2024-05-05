@@ -7,7 +7,7 @@ import Seoproject from "../../layouts/seoproject/Seoproject";
 
 const Home = () => {
     return (
-        <div className="bg-[#3A1F54]">
+        <div>
             <Navigation></Navigation>
             <Hero></Hero>
             <Portfolio></Portfolio>
