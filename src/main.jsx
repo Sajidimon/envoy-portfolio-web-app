@@ -15,6 +15,7 @@ import Login from './pages/login/Login.jsx';
 import SignUp from './pages/signup/SignUp.jsx';
 import ThemeOption from './pages/Dashboard/theme-option/ThemeOption.jsx';
 import AuthProvider from './provider/AuthProvider.jsx';
+import PrivateRoute from './routes/PrivateRoute.jsx';
 
 
 const router = createBrowserRouter([
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/dashboard',
-    element: <Dashboard />,
+    element: <PrivateRoute><Dashboard /></PrivateRoute>,
     children: [
       {
         path: '/dashboard',
