@@ -4,7 +4,7 @@ const ThemeOption = () => {
     return (
         <div>
             <div role="tablist" className="tabs tabs-lifted">
-                <input type="radio" name="my_tabs_2" role="tab" className="tab" aria-label="Header area" />
+                <input type="radio" name="my_tabs_2" role="tab" className="tab text-xl font-bold" aria-label="Header area" checked />
                 <div role="tabpanel" className="tab-content border-base-300 p-6">
                     <div className="form-control">
                         <label className="label">
@@ -30,7 +30,7 @@ const ThemeOption = () => {
                         <input type="url" placeholder="resume link" className="input mt-2 input-bordered bg-white" />
                     </div>
                 </div>
-                <input type="radio" name="my_tabs_2" role="tab" className="tab" aria-label="Footer area" />
+                <input type="radio" name="my_tabs_2" role="tab" className="tab text-xl font-bold" aria-label="Footer area" />
                 <div role="tabpanel" className="tab-content border-base-300 p-6">
                     <div className="form-control">
                         <label className="label">

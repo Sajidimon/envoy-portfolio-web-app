@@ -14,6 +14,7 @@ import SeoProject from './pages/Dashboard/seoProject/SeoProject.jsx';
 import Login from './pages/login/Login.jsx';
 import SignUp from './pages/signup/SignUp.jsx';
 import ThemeOption from './pages/Dashboard/theme-option/ThemeOption.jsx';
+import AuthProvider from './provider/AuthProvider.jsx';
 
 
 const router = createBrowserRouter([
@@ -55,6 +56,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>,
 )

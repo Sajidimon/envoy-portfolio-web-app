@@ -1,8 +1,10 @@
 {
   "projects": {
-    "default": "portfolio-website-client",
-    "production": "sajidimon-portfolio"
+    "default": "envoy-portfolio",
+    "production": "envoy-portfolio",
+    "portfolioApp": "sajidimon-portfolio"
   },
   "targets": {},
-  "etags": {}
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
 }
