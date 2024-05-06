@@ -8,9 +8,8 @@ import { AuthContext } from "../../provider/AuthProvider";
 
 const Login = () => {
 
-    const { user, logIn } = useContext(AuthContext);
+    const { logIn } = useContext(AuthContext);
     const [showpassword, setShowpassword] = useState(false);
-    const [emailerror, setEmailerror] = useState(null)
     const [passworderr, setPassworderr] = useState(null)
     const navigate = useNavigate();
 
@@ -21,17 +20,8 @@ const Login = () => {
         const email = data.email;
         const password = data.password;
 
-
-        //reset email error;
-        setEmailerror(' ');
+        //reset password error;
         setPassworderr(' ');
-
-        //existing email & password validation;
-
-        if (user.email !== email) {
-            setEmailerror('Email do not match ! ');
-            return;
-        }
 
         //login user with email and password;
 
@@ -44,7 +34,7 @@ const Login = () => {
 
             }).catch(error => {
                 if (error?.code === 'auth/invalid-credential') {
-                    setPassworderr('Password do not match !');
+                    setPassworderr('Email & Password do not match !');
                     return;
                 }
             })
@@ -62,7 +52,6 @@ const Login = () => {
                                 <span className="label-text text-black">Email Address</span>
                             </label>
                             <input {...register("email")} type="email" name="email" className="input input-bordered bg-white" required />
-                            {emailerror && <span className="text-red-500">{emailerror}</span>}
                         </div>
                         <div className="form-control relative">
                             <label className="label">
@@ -71,7 +60,6 @@ const Login = () => {
                             <input {...register("password")}
                                 type={showpassword ? "text" : "password"}
                                 className="textarea textarea-bordered bg-white" required />
-                            {passworderr && <span className="text-red-500">{passworderr}</span>}
                             <span onClick={() => setShowpassword(!showpassword)} className="absolute top-[50px] right-3">
                                 { showpassword ? <FaEyeSlash /> : <FaEye /> }
                             </span>
@@ -79,6 +67,7 @@ const Login = () => {
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Login</button>
                         </div>
+                        {passworderr && <span className="text-red-500">{passworderr}</span>}
                     </form>
                 </div>
                 <p className="mt-5"><Link to='/signup'><span>Register</span></Link> | <Link><span>Lost your password?</span></Link></p>

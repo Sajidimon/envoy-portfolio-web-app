@@ -7,7 +7,7 @@ import { AuthContext } from "../../provider/AuthProvider";
 
 const SignUp = () => {
 
-    const { user, createUser } = useContext(AuthContext);
+    const { createUser } = useContext(AuthContext);
     const [passworderr, setPassworderr] = useState(null)
     const [emailerr, setEmailerr] = useState(null)
     const navigate = useNavigate();
@@ -24,10 +24,10 @@ const SignUp = () => {
 
         //existing email validation;
 
-        if (user?.email == email) {
-            setEmailerr('Email is already exist!');
-            return;
-        }
+        // if (user?.email == email) {
+        //     setEmailerr('Email is already exist!');
+        //     return;
+        // }
 
         //password validation;
         const password = data.password;
@@ -48,7 +48,10 @@ const SignUp = () => {
                 reset();
                 navigate('/login');
             })
-        .catch(error=>console.log(error))
+            .catch(error => {
+                if (error?.code === 'auth/email-already-in-use')
+                    setEmailerr('Email is already exist')
+            })
 
     }
 
