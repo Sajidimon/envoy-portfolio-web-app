@@ -40,6 +40,9 @@ const Dashboard = () => {
                                     <Link to='/dashboard'><FaNodeJs /><button>Add node project</button></Link>
                                 </li>
                                 <li>
+                                    <Link to='/dashboard/all-node-projects'><FaNodeJs /><button>All node project</button></Link>
+                                </li>
+                                <li>
                                     <Link to='/dashboard/wp-project'><FaWordpress /><button>Add wp project</button></Link>
                                 </li>
                                 <li>

@@ -1,5 +1,8 @@
 
-const Hero = () => {
+const Hero = ({ headersbio }) => {
+
+    const headerinfo = headersbio[0]
+
     return (
         <div>
             <div>
@@ -7,9 +10,9 @@ const Hero = () => {
                     <div className="hero-overlay bg-opacity-60"></div>
                     <div className="hero-content text-center text-neutral-content">
                         <div className="max-w-md text-white">
-                            <p className="mb-5 text-3xl">Hi, I’m Imon Chowdhury</p>
-                            <h1 className="mb-5 text-5xl font-bold leading-tight">Web Application Developer</h1>
-                            <a href="https://drive.google.com/file/d/10GVQgXy3RodWUC1gp-P-f3jMWqw996hB/view?usp=sharing" target="_blank"><button className="btn btn-secondary">My Resume</button></a>
+                            <p className="mb-5 text-3xl">{headerinfo?.userName}</p>
+                            <h1 className="mb-5 text-5xl font-bold leading-tight">{headerinfo?.userProfession}</h1>
+                            <a href={headerinfo?.userResume } target="_blank"><button className="btn btn-secondary">My Resume</button></a>
                         </div>
                     </div>
                 </div>

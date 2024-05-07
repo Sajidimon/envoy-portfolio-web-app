@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
 import './index.css'
 import {
   createBrowserRouter,
@@ -30,6 +29,9 @@ const router = createBrowserRouter([
       {
         path: '/dashboard',
         element: <ExpressProject/>
+      },
+      {
+        path: 'all-node-projects'
       },
       {
         path: 'wp-project',

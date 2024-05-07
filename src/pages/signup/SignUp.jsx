@@ -3,6 +3,7 @@ import SectionTitle from "../../components/SectionTitle/SectionTitle";
 import { useForm } from "react-hook-form"
 import { useContext, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
+import { saveuser } from "../../api/auth";
 
 
 const SignUp = () => {
@@ -44,9 +45,10 @@ const SignUp = () => {
         createUser(email, password)
             .then(result => {
                 const user = result.user;
+                saveuser(user);
                 console.log(user)
                 reset();
-                navigate('/login');
+                navigate('/dashboard');
             })
             .catch(error => {
                 if (error?.code === 'auth/email-already-in-use')
