@@ -8,7 +8,7 @@ const PrivateRoute = ({ children }) => {
 
 
     if (loading) {
-        return <span className="loading loading-dots loading-lg"></span>;
+        return <span className="loading mx-auto block mt-52 loading-dots loading-lg"></span>;
     }
 
 

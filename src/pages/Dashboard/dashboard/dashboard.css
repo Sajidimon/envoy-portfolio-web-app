@@ -1,0 +1,5 @@
+button,
+[role="button"] {
+    cursor: pointer;
+    text-align: left;
+}

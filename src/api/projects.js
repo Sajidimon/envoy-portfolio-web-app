@@ -26,3 +26,49 @@ export const saveExpressData = express => {
             console.log(data)
         })
 }
+
+//delete express data from db;
+
+
+export const handleDeleteExdata = id => {
+    
+    fetch(`http://localhost:5000/express/${id}`, {
+        method: 'DELETE'
+    }).then(res => res.json())
+        .then(data => {
+            if (data.deletedCount) {
+                alert('Data has been deleted')
+            }
+        console.log(data)
+    })
+}
+
+// update express data to db;
+
+export const handleUpdateExdata = updateeex => {
+    const updateExpressTtems = {
+        projectId: updateeex.projectId,
+        title: updateeex.title,
+        description: updateeex.description,
+        livelink: updateeex.livelink,
+        codelink: updateeex.codelink,
+        expressimage: updateeex.expressimage
+    }
+
+    fetch(`http://localhost:5000/express/${updateeex.projectId}`, {
+        method: 'PUT',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(updateExpressTtems)
+    })
+        .then(res => res.json())
+        .then(data => {
+            if (data.modifiedCount) {
+                alert('Projects has been Updated')
+            }
+            console.log(data)
+        })
+}
+
+

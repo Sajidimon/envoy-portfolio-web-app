@@ -15,6 +15,8 @@ import SignUp from './pages/signup/SignUp.jsx';
 import ThemeOption from './pages/Dashboard/theme-option/ThemeOption.jsx';
 import AuthProvider from './provider/AuthProvider.jsx';
 import PrivateRoute from './routes/PrivateRoute.jsx';
+import AllexProjects from './pages/Dashboard/expressproject/allexproject/AllexProjects.jsx';
+import UpdateexProject from './pages/Dashboard/expressproject/updateexproject/UpdateexProject.jsx';
 
 
 const router = createBrowserRouter([
@@ -28,32 +30,39 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/dashboard',
-        element: <ExpressProject/>
+        element: <ExpressProject />
       },
       {
-        path: 'all-node-projects'
+        path: 'all-node-projects',
+        element: <AllexProjects />,
+        loader: () => fetch('http://localhost:5000/express')
+      },
+      {
+        path: 'update-exproject/:id',
+        element: <UpdateexProject />,
+        loader: ({ params }) => fetch(`http://localhost:5000/express/${params.id}`)
       },
       {
         path: 'wp-project',
-        element: <WpProject/>
+        element: <WpProject />
       },
       {
         path: 'seo-project',
-        element: <SeoProject/>
+        element: <SeoProject />
       },
       {
         path: 'theme-option',
-        element: <ThemeOption/>
+        element: <ThemeOption />
       }
     ]
   },
   {
     path: '/login',
-    element: <Login/>
+    element: <Login />
   },
   {
     path: '/signup',
-    element: <SignUp/>
+    element: <SignUp />
   }
 ]);
 
