@@ -22,14 +22,7 @@ const SignUp = () => {
         setPassworderr(' ');
         setEmailerr(' ');
 
-
-        //existing email validation;
-
-        // if (user?.email == email) {
-        //     setEmailerr('Email is already exist!');
-        //     return;
-        // }
-
+        
         //password validation;
         const password = data.password;
         if (password.length < 6) {

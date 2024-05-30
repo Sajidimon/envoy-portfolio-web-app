@@ -10,8 +10,8 @@ const Hero = ({ headersbio }) => {
                     <div className="hero-overlay bg-opacity-60"></div>
                     <div className="hero-content text-center text-neutral-content">
                         <div className="max-w-md text-white">
-                            <p className="mb-5 text-3xl">{headerinfo?.userName}</p>
-                            <h1 className="mb-5 text-5xl font-bold leading-tight">{headerinfo?.userProfession}</h1>
+                            <p className="mb-5 text-3xl">Hi, Imon Chowdhury</p>
+                            <h1 className="mb-5 text-5xl font-bold leading-tight">Full Stack Web Developer</h1>
                             <a href={headerinfo?.userResume } target="_blank"><button className="btn btn-secondary">My Resume</button></a>
                         </div>
                     </div>

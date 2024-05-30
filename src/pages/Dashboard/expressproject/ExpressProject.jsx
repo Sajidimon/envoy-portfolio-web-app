@@ -13,14 +13,12 @@ const ExpressProject = () => {
     const description = form.description.value;
     const livelink = form.livelink.value;
     const codelink = form.codelink.value;
-    const expressimage = form.expressimage.value;
 
    const expressData = {
       title,
       description,
       livelink,
       codelink,
-     expressimage
     }
     console.log(expressData)
     
@@ -60,12 +58,6 @@ const ExpressProject = () => {
                   <span className="label-text">Enter project Code link</span>
                 </label>
                 <input type="url" name='codelink' className="input input-bordered bg-white" required />
-              </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Project image</span>
-                </label>
-              <input type="file" name='expressimage' className="file-input file-input-bordered file-input-accent bg-white" required />
               </div>
               <div className="form-control mt-6">
                 <button className="btn btn-primary">Add your project</button>

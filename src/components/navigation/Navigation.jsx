@@ -22,7 +22,6 @@ const Navigation = ({ headersbio }) => {
                         <a href={headerinfo?.github} target="_blank"><span><FaGithub></FaGithub></span></a>
                         <a className="max-sm:hidden" href={headerinfo?.youtube} target="_blank"><span><FaYoutube></FaYoutube></span></a>
                     </button>
-                    <Link to='/login'><button className="px-4 py-1 rounded-lg bg-violet-500 text-black max-sm:btn-sm">Login</button></Link>
                 </div>
             </div>
         </div>

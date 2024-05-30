@@ -14,7 +14,6 @@ const Dashboard = () => {
     const [showSubmenu1, setShowSubmenu1] = useState(false);
     const [showSubmenu2, setShowSubmenu2] = useState(false);
     const [showSubmenu3, setShowSubmenu3] = useState(false);
-    const [showSubmenu4, setShowSubmenu4] = useState(false);
 
     const toggleSubmenu1 = () => {
         setShowSubmenu1(!showSubmenu1);
@@ -26,10 +25,6 @@ const Dashboard = () => {
 
     const toggleSubmenu3 = () => {
         setShowSubmenu3(!showSubmenu3);
-    };
-
-    const toggleSubmenu4 = () => {
-        setShowSubmenu4(!showSubmenu4);
     };
 
     //logout user;
@@ -97,22 +92,6 @@ const Dashboard = () => {
                                 </li>
                                 <li>
                                     <Link to='/dashboard/theme-option'><IoMdOptions /><button>Theme Options</button></Link>
-                                </li>
-                                <li className="menu-item" onClick={toggleSubmenu4}>
-                                    <button><FaUsers/> Users</button>
-                                    {showSubmenu4 && (
-                                        <ul className="submenu">
-                                            <li>
-                                                <Link to='/dashboard/theme-option'><FaUser /><button>All Users</button></Link>
-                                            </li>
-                                            <li>
-                                                <Link to='/dashboard/theme-option'><FaUserCircle /><button>Profile</button></Link>
-                                            </li>
-                                        </ul>
-                                    )}
-                                </li>
-                                <li>
-                                    <Link to='/dashboard/theme-option'><MdOutlineSettings /><button>Settings</button></Link>
                                 </li>
                             </ul>
                         </div>
