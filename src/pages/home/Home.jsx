@@ -17,17 +17,17 @@ const Home = () => {
 
     useEffect(() => {
 
-        fetch('http://localhost:5000/express')
+        fetch('https://envoy-portfolio-server.onrender.com/express')
             .then(res => res.json())
             .then(data => setExdata(data))
 
     }, [])
 
-        fetch(`http://localhost:5000/headersbio/${user.email}`)
-            .then(res => res.json())
-            .then(data => {
-                setHeaderbio(data)
-            })
+    fetch(`https://envoy-portfolio-server.onrender.com/headersbio/${user.email}`)
+        .then(res => res.json())
+        .then(data => {
+            setHeaderbio(data)
+        })
 
     return (
         <div>

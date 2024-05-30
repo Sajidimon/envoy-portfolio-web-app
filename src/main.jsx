@@ -35,12 +35,12 @@ const router = createBrowserRouter([
       {
         path: 'all-node-projects',
         element: <AllexProjects />,
-        loader: () => fetch('http://localhost:5000/express')
+        loader: () => fetch('https://envoy-portfolio-server.onrender.com/express')
       },
       {
         path: 'update-exproject/:id',
         element: <UpdateexProject />,
-        loader: ({ params }) => fetch(`http://localhost:5000/express/${params.id}`)
+        loader: ({ params }) => fetch(`https://envoy-portfolio-server.onrender.com/express/${params.id}`)
       },
       {
         path: 'wp-project',

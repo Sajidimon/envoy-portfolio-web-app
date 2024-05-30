@@ -40,7 +40,7 @@ const ThemeOption = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/headersbio/${user.email}`)
+        fetch(`https://envoy-portfolio-server.onrender.com/headersbio/${user.email}`)
             .then(res => res.json())
             .then(data => {
                 setHeaderbio(data)

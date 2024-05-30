@@ -5,13 +5,13 @@ export const saveuser = user => {
         email: user.email
     }
 
-    fetch(`http://localhost:5000/users/${user?.email}`, {
+    fetch(`https://envoy-portfolio-server.onrender.com/users/${user?.email}`, {
         method: 'PUT',
         headers: {
-            'content-type' : 'application/json'
+            'content-type': 'application/json'
         },
         body: JSON.stringify(currentUser)
     })
         .then(res => res.json())
-    .then(data=>console.log(data))
+        .then(data => console.log(data))
 }

@@ -11,13 +11,13 @@ export const saveExpressData = express => {
         expressimage: express.expressimage
     }
 
-    fetch('http://localhost:5000/express', {
+    fetch('https://envoy-portfolio-server.onrender.com/express', {
         method: 'POST',
         headers: {
-            'content-type' : 'application/json'
+            'content-type': 'application/json'
         },
         body: JSON.stringify(expressitems)
-    }) 
+    })
         .then(res => res.json())
         .then(data => {
             if (data.insertedId) {
@@ -31,16 +31,16 @@ export const saveExpressData = express => {
 
 
 export const handleDeleteExdata = id => {
-    
-    fetch(`http://localhost:5000/express/${id}`, {
+
+    fetch(`https://envoy-portfolio-server.onrender.com/express/${id}`, {
         method: 'DELETE'
     }).then(res => res.json())
         .then(data => {
             if (data.deletedCount) {
                 alert('Data has been deleted')
             }
-        console.log(data)
-    })
+            console.log(data)
+        })
 }
 
 // update express data to db;
@@ -55,7 +55,7 @@ export const handleUpdateExdata = updateeex => {
         expressimage: updateeex.expressimage
     }
 
-    fetch(`http://localhost:5000/express/${updateeex.projectId}`, {
+    fetch(`https://envoy-portfolio-server.onrender.com/express/${updateeex.projectId}`, {
         method: 'PUT',
         headers: {
             'content-type': 'application/json'
